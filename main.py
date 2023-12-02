@@ -18,7 +18,7 @@ def index():
     print(f'Client 2 - Value from Memcached: {result}')
 
     # HTML-formatted text
-    html_text = "<h1>Hello, Feature flag 1! Is there a key here "+{result}+"</h1><p>This is a sample HTML-formatted text.</p>"
+    html_text = f"<h1>Hello, Feature flag 1! Is there a key here {result}</h1><p>This is a sample HTML-formatted text.</p>"
     html_text2 = "<h1>Hello, Feature flag 2!</h1><p>This is a sample HTML-formatted text.</p>"
 
     # Render the HTML template
