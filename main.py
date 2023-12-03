@@ -16,14 +16,16 @@ def index():
     # Retrieve the value set by Client 1
     result = client.get(key)
 
-    print(f'Client 2 - Value from Memcached: {result}')
+    data_string = result.decode('utf-8')
+
+    print(f'Client 2 - Value from Memcached: {data_string}')
 
     html_text = ""
 
     # HTML-formatted text
 
-    if result == "test":
-        html_text = f"<h1>Hello, Feature flag 1! Is there a key here {result}</h1><p>This is a sample HTML-formatted " \
+    if data_string == "test":
+        html_text = f"<h1>Hello, Feature flag 1! Is there a key here {data_string}</h1><p>This is a sample HTML-formatted " \
                     f"text.</p>"
     else:
         html_text = "<h1>Hello, Feature flag 2!</h1><p>This is a sample HTML-formatted text.</p>"

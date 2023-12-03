@@ -12,4 +12,6 @@ client.set(key, value)
 # Retrieve a value from Memcached
 result = client.get(key)
 
-print(f'Client 1 - Value from Memcached: {result}')
+data_string = result.decode('utf-8')
+
+print(f'Client 1 - Value from Memcached: {data_string}')
