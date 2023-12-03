@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 feature_flag = False
 
+
 @app.route('/')
 def index():
     from pymemcache.client import base
@@ -17,9 +18,15 @@ def index():
 
     print(f'Client 2 - Value from Memcached: {result}')
 
+    html_text = ""
+
     # HTML-formatted text
-    html_text = f"<h1>Hello, Feature flag 1! Is there a key here {result}</h1><p>This is a sample HTML-formatted text.</p>"
-    html_text2 = "<h1>Hello, Feature flag 2!</h1><p>This is a sample HTML-formatted text.</p>"
+
+    if result == "test":
+        html_text = f"<h1>Hello, Feature flag 1! Is there a key here {result}</h1><p>This is a sample HTML-formatted " \
+                    f"text.</p>"
+    else:
+        html_text = "<h1>Hello, Feature flag 2!</h1><p>This is a sample HTML-formatted text.</p>"
 
     # Render the HTML template
     # if feature_flag:
