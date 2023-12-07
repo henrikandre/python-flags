@@ -28,9 +28,6 @@ def index():
         html_text = f"<h1>Hello, Feature flag 1! Is there a key here {data_string}</h1>"
     elif data_string == "flag2":
         html_text = f"<h1>Hello, Feature flag 2! Look at this {data_string}</h1>"
-    else:
-        html_text = f"<h1>Hello, uh-oh! No or wrong flags have been set</h1>"
-
 
     return html_text
 
