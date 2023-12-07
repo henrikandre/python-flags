@@ -1,6 +1,6 @@
 from pymemcache.client import base
 
-client = base.Client(("127.0.0.1", 11211))  # Replace with your Memcached server address
+client = base.Client(("10.196.38.52", 11211))  # Memcached server address
 
 key = 'feature_flag'
 value = 'flag1'

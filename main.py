@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -9,7 +9,7 @@ feature_flag = False
 def index():
     from pymemcache.client import base
 
-    client = base.Client(('localhost', 11211))  # Replace with your Memcached server address
+    client = base.Client(('10.196.38.52', 11211))  # Memcached server address
 
     key = 'feature_flag'
 
@@ -31,11 +31,7 @@ def index():
     else:
         html_text = f"<h1>Hello, uh-oh! No or wrong flags have been set</h1>"
 
-    # Render the HTML template
-    # if feature_flag:
-    #     return render_template('index.html', html_text=html_text1)
-    # else:
-    #     return html_text2
+
     return html_text
 
 
