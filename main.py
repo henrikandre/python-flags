@@ -24,11 +24,12 @@ def index():
 
     # HTML-formatted text
 
-    if data_string == "test":
-        html_text = f"<h1>Hello, Feature flag 1! Is there a key here {data_string}</h1><p>This is a sample HTML-formatted " \
-                    f"text.</p>"
+    if data_string == "flag1":
+        html_text = f"<h1>Hello, Feature flag 1! Is there a key here {data_string}</h1>"
+    elif data_string == "flag2":
+        html_text = f"<h1>Hello, Feature flag 2! Look at this {data_string}</h1>"
     else:
-        html_text = "<h1>Hello, Feature flag 2!</h1><p>This is a sample HTML-formatted text.</p>"
+        html_text = f"<h1>Hello, uh-oh! No or wrong flags have been set</h1>"
 
     # Render the HTML template
     # if feature_flag:

@@ -1,10 +1,11 @@
 from pymemcache.client import base
 
-
 client = base.Client(("127.0.0.1", 11211))  # Replace with your Memcached server address
 
 key = 'feature_flag'
-value = 'test'
+value = 'flag1'
+
+# change value to flag2 for second feature flag
 
 # Set a value in Memcached
 client.set(key, value)
